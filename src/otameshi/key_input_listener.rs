@@ -1,5 +1,10 @@
 use windows::{core::*, Win32::Foundation::*, Win32::UI::WindowsAndMessaging::*};
 
+// バックグラウンドからキーボード入力を取得する
+// https://qiita.com/horyu/items/12f6cd13ceb217782df3
+// 下記で議論されている、Cで書かれたコードをRUSTに移植したもの。
+// https://stackoverflow.com/questions/65210101/c-win32-keyboard-input-to-a-non-foreground-window
+
 pub fn kii_risunaa() -> Result<()> {
     unsafe {
         let k_hook = SetWindowsHookExA(WH_KEYBOARD_LL, Some(k_callback1), HINSTANCE::default(), 0);
