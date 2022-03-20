@@ -7,6 +7,7 @@ mod otameshi;
 use crate::otameshi::event_listener;
 use crate::otameshi::json_serialize;
 use crate::otameshi::key_input_listener;
+use crate::otameshi::key_input_listener2;
 use crate::otameshi::logger;
 use crate::otameshi::message_box;
 use crate::otameshi::thread;
@@ -30,8 +31,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     // println!("----------------------------");
     // event_listener::ibento_risunaaa();
 
+    // println!("----------------------------");
+    // key_input_listener::kii_risunaa()?;
+
     println!("----------------------------");
-    key_input_listener::kii_risunaa()?;
+    key_input_listener2::kii_risunaa2()?;
 
     Ok(())
 }
